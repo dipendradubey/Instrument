@@ -20,6 +20,13 @@ class DataFetcher{
         dataProtocol?.updateView(dataArray)
     }
     
+    func fetchData(){
+        let dataArray = ["Sun", "Mon", "Tue"]
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+5){[unowned self] in
+            self.completion(dataArray)
+        }
+    }
     
     
 }
