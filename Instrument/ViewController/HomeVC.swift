@@ -11,12 +11,17 @@ class HomeVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       title = "Home Screen"
+        title = "Home Screen"
     }
     
-    @IBAction func tapMeButtonClicked(){
+    @IBAction func leakTimeProfileClicked(){
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "HomeDetailVC")
         navigationController?.pushViewController(detailVC!, animated: true)
+    }
+    
+    @IBAction func threadSanitiserClicked(){
+        //Shortcut to navigation
+        show(ThreadVC(), sender: self)
     }
 }
 
