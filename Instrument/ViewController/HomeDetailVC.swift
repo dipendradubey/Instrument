@@ -38,7 +38,7 @@ class HomeDetailVC: UIViewController, DataProtocol, UITableViewDataSource, UITab
             print("weak called")
         }
         
-        //This can be fixed by taking weak references or using unknowned reference
+        //This can be fixed by taking weak references or using unowned reference
         dataFetcher.completion = {[unowned self] dataArray in
             self.dataArray += dataArray
             self.tblView.reloadData()
