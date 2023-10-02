@@ -11,6 +11,11 @@ class HomeDetailVC: UIViewController, DataProtocol, UITableViewDataSource, UITab
     @IBOutlet var tblView: UITableView!
     var dataArray = [String]()
     var dataFetcher = DataFetcher()
+    lazy var dateFormate : DateFormatter = {
+        let dateFormate = DateFormatter()
+        dateFormate.dateFormat = "dd-MMM-yyyy hh:mm:ss a"
+        return dateFormate
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +60,10 @@ class HomeDetailVC: UIViewController, DataProtocol, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         cell.lblName.text = dataArray[indexPath.row]
+        cell.updateImageView()
+        
+        cell.lblDate.text = dateFormate.string(from: Date())
+        
         return cell
     }
     

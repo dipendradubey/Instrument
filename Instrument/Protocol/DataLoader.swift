@@ -21,12 +21,10 @@ class DataFetcher{
     }
     
     func fetchData(){
-        let dataArray = ["Sun", "Mon", "Tue"]
+        let dataArray = Array(repeating: "Sun", count: 500)
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+5){[unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: .now()+1){[unowned self] in
             self.completion(dataArray)
         }
     }
-    
-    
 }
