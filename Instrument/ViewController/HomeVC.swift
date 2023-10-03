@@ -21,7 +21,8 @@ class HomeVC: UIViewController{
     
     @IBAction func threadSanitiserClicked(){
         //Shortcut to navigation
-        show(ThreadVC(), sender: self)
+        let VC = storyboard?.instantiateViewController(withIdentifier: "ThreadVC")
+        show(VC!, sender: self)
     }
 }
 

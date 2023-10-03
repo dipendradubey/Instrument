@@ -11,6 +11,7 @@
 		A81865A32AC0731000BD480B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81865A22AC0731000BD480B /* TableViewCell.swift */; };
 		A81865A52AC07AFC00BD480B /* HomeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81865A42AC07AFC00BD480B /* HomeDetailVC.swift */; };
 		A8862CE82ACB2BBC000021E4 /* ThreadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8862CE72ACB2BBB000021E4 /* ThreadVC.swift */; };
+		A8C13D062ACBAB7000B37EB2 /* ThreadHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C13D052ACBAB7000B37EB2 /* ThreadHandler.swift */; };
 		A8C427F02ABF2E760029DFCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C427EF2ABF2E760029DFCE /* AppDelegate.swift */; };
 		A8C427F22ABF2E760029DFCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C427F12ABF2E760029DFCE /* SceneDelegate.swift */; };
 		A8C427F42ABF2E760029DFCE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C427F32ABF2E760029DFCE /* HomeVC.swift */; };
@@ -24,6 +25,7 @@
 		A81865A22AC0731000BD480B /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A81865A42AC07AFC00BD480B /* HomeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailVC.swift; sourceTree = "<group>"; };
 		A8862CE72ACB2BBB000021E4 /* ThreadVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadVC.swift; sourceTree = "<group>"; };
+		A8C13D052ACBAB7000B37EB2 /* ThreadHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHandler.swift; sourceTree = "<group>"; };
 		A8C427EC2ABF2E760029DFCE /* Instrument.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instrument.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C427EF2ABF2E760029DFCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8C427F12ABF2E760029DFCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		A8C13D042ACBAB5D00B37EB2 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+				A8C13D052ACBAB7000B37EB2 /* ThreadHandler.swift */,
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
 		A8C427E32ABF2E760029DFCE = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +100,7 @@
 		A8C427EE2ABF2E760029DFCE /* Instrument */ = {
 			isa = PBXGroup;
 			children = (
+				A8C13D042ACBAB5D00B37EB2 /* Actor */,
 				A8AF1A802AC808CE007CE165 /* ViewController */,
 				A81865A12AC072E500BD480B /* Cell */,
 				A818659E2AC070E300BD480B /* Protocol */,
@@ -178,6 +189,7 @@
 				A81865A32AC0731000BD480B /* TableViewCell.swift in Sources */,
 				A81865A02AC0711800BD480B /* DataLoader.swift in Sources */,
 				A8C427F42ABF2E760029DFCE /* HomeVC.swift in Sources */,
+				A8C13D062ACBAB7000B37EB2 /* ThreadHandler.swift in Sources */,
 				A8862CE82ACB2BBC000021E4 /* ThreadVC.swift in Sources */,
 				A8C427F02ABF2E760029DFCE /* AppDelegate.swift in Sources */,
 				A8C427F22ABF2E760029DFCE /* SceneDelegate.swift in Sources */,

@@ -9,15 +9,21 @@ import UIKit
 
 class ThreadVC: UIViewController{
     
+    let threadHandler = ThreadHandler()
+    @IBOutlet var lblCount: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .purple
         title = "Thread Sanitiser"
-        sanitiser()
+        //fixRaceBySerialQueue()
+        fixRaceByActor()
+        //print (lblCount.text)
+        getUpdateValue()
     }
     
-    //This issue creates sanitiser
-    /*func sanitiser(){
+    //This issue creates Race condition can be detected by Thread Sanitizer
+    /*func createRace(){
         var array:[String] = []
         DispatchQueue.global().async {
             for index in 0...10000{
@@ -29,7 +35,8 @@ class ThreadVC: UIViewController{
     }
     */
     
-    func sanitiser(){
+    //Fixed the race condition by serial queue
+    func fixRaceBySerialQueue(){
         var array:[String] = []
         let queue  = DispatchQueue(label: "com.abc.def")
         //DispatchQueue.global().async {
@@ -47,9 +54,21 @@ class ThreadVC: UIViewController{
 
     }
     
-    @IBAction func tapMeButtonClicked(){
-        let detailVC = storyboard?.instantiateViewController(withIdentifier: "HomeDetailVC")
-        navigationController?.pushViewController(detailVC!, animated: true)
+    //Fixed the race condition by using Actor
+    
+    func fixRaceByActor(){
+        DispatchQueue.global(qos: .userInitiated).async{[self] in
+            Task{await self.threadHandler.getUpdateValue()}
+        }
+        
     }
+    
+    @MainActor
+    func getUpdateValue(){
+        Task{
+            lblCount.text = "\(await self.threadHandler.getCount())"
+        }
+    }
+    
 }
 
